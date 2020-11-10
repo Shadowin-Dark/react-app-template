@@ -1,6 +1,6 @@
 git stash
 git branch -D gh-pages
-git checkout gh-pages
+git checkout -b gh-pages
 git stash pop
 echo 'yarn installing:'
 yarn
