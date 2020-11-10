@@ -5,8 +5,10 @@
   "scripts": {
     "server": "node server.js",
     "build": "NODE_ENV=production webpack --config ./webpack.prd.config.js --mode production",
+    "demo": "NODE_ENV=production webpack --config ./webpack.demo.config.js --mode production",
     "eslint": "eslint --ext .jsx,.js src/",
     "lint": "yarn eslint && yarn stylelint",
+    "publish": "sh ./scripts/publish.sh",
     "start": "webpack-dev-server --config ./webpack.dev.config.js --host 0.0.0.0",
     "stylelint": "stylelint src/**/*.css"
   },
