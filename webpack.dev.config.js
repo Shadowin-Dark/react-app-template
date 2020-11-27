@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const path = require('path');
-
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const webpackBaseConf = require('./webpack.base.config.js');
+
 const port = 30000;
 
 module.exports = merge(webpackBaseConf, {
@@ -11,9 +11,7 @@ module.exports = merge(webpackBaseConf, {
   output: {
     publicPath: '/'
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
   devServer: {
     writeToDisk: true,
     compress: false,

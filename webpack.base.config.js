@@ -8,7 +8,7 @@ const OUTPUT_PATH = path.resolve(__dirname, './public/');
 
 module.exports = {
   entry: {
-    reactApp: './src/index.js',
+    reactApp: './src/index.js'
   },
   output: {
     path: OUTPUT_PATH,
@@ -73,9 +73,6 @@ module.exports = {
     ]
   },
   resolve: {
-    alias: {
-      'react-dom': '@hot-loader/react-dom'
-    },
     extensions: ['.js', '.jsx']
   },
   optimization: {
