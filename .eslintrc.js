@@ -34,7 +34,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-param-reassign': [2, { props: false }],
     'react/react-in-jsx-scope': 0,
-    'react/jsx-filename-extension': [2, { extensions: ['.js'] }],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.tsx'] }],
     'react/jsx-fragments': 0,
     'react/jsx-props-no-spreading': 0,
     'react/prop-types': 0,
@@ -43,5 +43,23 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'no-plusplus': 0,
-  }
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never'
+      }
+    ]
+  },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ]
 };

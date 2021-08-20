@@ -8,7 +8,7 @@ const OUTPUT_PATH = path.resolve(__dirname, './public/');
 
 module.exports = {
   entry: {
-    reactApp: './src/index.js'
+    reactApp: './src/index.tsx'
   },
   output: {
     path: OUTPUT_PATH,
@@ -35,13 +35,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(tsx|ts)$/,
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader',
+            loader: 'esbuild-loader',
             options: {
-              cacheDirectory: true
+              loader: 'tsx',
+              target: 'es2015'
             }
           }
         ]
@@ -73,7 +74,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   optimization: {
     moduleIds: 'hashed',
