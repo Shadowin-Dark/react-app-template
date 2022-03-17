@@ -1,11 +1,11 @@
 # React App Template
 
-React App Template 是一个快捷搭建 `webpack`+`react16` 开发环境的工具
+React App Template 是一个快捷搭建 `typescript`+`webpack`+`react17` 开发环境的工具
 
 ## 使用方式
 
 环境依赖：
-nodeJS：v12.16.3
+nodeJS：v14+
 
 ```console
 > git clone https://github.com/Shadowin-Dark/react-app-template.git
@@ -46,10 +46,9 @@ nodeJS：v12.16.3
 |   |    |- build
 |   |    |- start
 |   |- dependencies
-|   |    |- babel
 |   |    |- core-js
+|   |    |- esbuild-loader
 |   |    |- css-loader
-|   |    |- style-loader
 |   |    |- html-webpack-plugin
 |   |    |- mini-css-extract-plugin
 |   |    |- webpack
@@ -66,12 +65,6 @@ nodeJS：v12.16.3
 
 使你能够使用类似@import 和 url（…）的方法实现 require 的功能。
 
-> > style-loader
-
-将所有的计算后的样式加入页面中
-
-二者组合在一起使你能够把样式表嵌入 webpack 打包后的 js 文件中。
-
 > > html-webpack-plugin
 
 当使用 webpack 打包时，创建一个 html 文件，并把 webpack 打包后的静态文件自动插入到这个 html 文件当中
@@ -80,9 +73,9 @@ nodeJS：v12.16.3
 
 用于打包 css 文件，从 css 文件中提取 css 代码到单独的文件中，对 css 代码进行代码压缩等。
 
-> babel
+> esbuild-loader
 
-[babel](https://babeljs.io/) 是一个广泛使用的转码器，可以将 ES6 代码转为 ES5 代码，从而在现有环境执行。
+用于替换 babel 的打包工具
 
 > core-js
 
